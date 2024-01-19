@@ -11,13 +11,7 @@ const { UserModel } = require("./models/user")
 
 const app = express()
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'))
-})
 
-app.use((req, res) => {
-  return res.status(404).json({ error: "Route not found" })
-})
 
 
 app.use(morgan("dev"))
